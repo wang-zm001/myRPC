@@ -1,5 +1,7 @@
 package com.wzm.myrpc.client.discovery;
 
+import com.wzm.myrpc.common.service.Service;
+
 import java.util.List;
 
 /**
@@ -8,5 +10,5 @@ import java.util.List;
  * @author xiaoming
  */
 public interface ServiceDiscovery {
-    List<String> getServices(String name);
+    List<Service> getServices(String name);
 }
