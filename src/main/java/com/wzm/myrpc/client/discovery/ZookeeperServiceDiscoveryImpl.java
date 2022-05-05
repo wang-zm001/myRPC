@@ -27,6 +27,13 @@ public class ZookeeperServiceDiscoveryImpl implements ServiceDiscovery{
         zkClient.setZkSerializer(new ZookeeperSerializer());
     }
 
+    /**
+     * 使用Zookeeper客户端，通过服务名获取服务列表
+     * 服务名格式：接口全路径
+     *
+     * @param name 服务名
+     * @return 服务列表
+     */
     @Override
     public List<Service> getServices(String name) {
         String servicePath = MyRPCConstants.ZK_Service_path + MyRPCConstants.PATH_DELIMITER + name + "/service";

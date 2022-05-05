@@ -16,6 +16,14 @@ import org.slf4j.LoggerFactory;
 public class NettyClientImpl implements NettyClient{
     private static Logger logger = LoggerFactory.getLogger(NettyClientImpl.class);
 
+    /**
+     * 发送请求
+     *
+     * @param data    请求数据
+     * @param service 服务信息
+     * @return 响应数据
+     * @throws InterruptedException 异常
+     */
     @Override
     public byte[] sendRequest(byte[] data, Service service) throws InterruptedException {
         String[] addInfoArray = service.getAddress().split(":");

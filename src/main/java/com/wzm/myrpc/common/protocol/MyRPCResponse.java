@@ -1,5 +1,6 @@
 package com.wzm.myrpc.common.protocol;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +10,7 @@ import java.util.Map;
  * @author 东方雨倾
  * @since 1.0.0
  */
-public class MyRPCResponse {
+public class MyRPCResponse implements Serializable {
     private static final long serialVersionUID = -4317845782629589997L;
 
     private MyRPCStatus status;

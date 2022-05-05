@@ -17,6 +17,13 @@ import java.util.Random;
 
 import static java.lang.reflect.Proxy.newProxyInstance;
 
+/**
+ * 客户端代理工厂：用于创建远程服务代理类
+ * 封装编组请求、请求发送、编组响应等操作。
+ *
+ * @author 东方雨倾
+ * @since 1.0.0
+ */
 public class ClientProxyFactory {
     private ServiceDiscovery serviceDiscovery;
 
@@ -26,6 +33,13 @@ public class ClientProxyFactory {
 
     private Map<Class<?>,Object> objectCache = new HashMap<>();
 
+    /**
+     * 通过Java动态代理获取服务代理类
+     *
+     * @param clazz 被代理类Class
+     * @param <T>   泛型
+     * @return 服务代理类
+     */
     @SuppressWarnings("unchecked")
     public <T> T getProxy(Class<T> clazz) {
         return (T) this.objectCache.computeIfAbsent(clazz,
